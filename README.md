@@ -15,15 +15,6 @@ The course introduces the development fundamentals of Video Games, and other int
 | Midterm (in-class) |15% | Theory + Practice | Week 7 |
 | Final (in-class) |15% | Theory + Practice | Week 12 |
 
-
-
-## Office Hours
-
-| Time | Location |
-| :--- | :--- |
-| Tue	2:20pm-3:00pm | Classroom or ECS 530 |
-| Thu	2:20pm-3:00pm | Classroom or ECS 530 |
-
 ## Homeworks
 * Lab, homeworks and projects are to in *C#* and *Unity*
 * Your assignments should **not be publicly posted** (on github, bickbucket, etc..), please use private repositories. You can get unlimited private repositories by subscribing to the [Student Developer Pack](http://education.github.com).
