@@ -12,12 +12,6 @@ public class Tank : MonoBehaviour {
 	public Cannon cannon;
 	public HealthBar healthBar;
 
-	AudioSource audio;
-
-	void Start () {
-		audio = GetComponent<AudioSource> ();
-	}
-
 	public void MoveForward() {
 		transform.position += transform.up * Time.deltaTime * moveSpeed;
 	}
@@ -50,17 +44,6 @@ public class Tank : MonoBehaviour {
 
 			// TODO: -------------------------
 			// Make AI respond to attack
-
-
-
-			// -------------------------------
-
-		}
-
-		if (audio != null) {
-
-			// TODO: -------------------------
-			// Play impact sound
 
 
 
