@@ -28,9 +28,7 @@ public class Player : MonoBehaviour {
 	}
 
 	void Start () {
-
 		tank = GetComponent<Tank> ();
-
 	}
 
 	void Update () {
@@ -67,7 +65,7 @@ public class Player : MonoBehaviour {
 		var mousePos = camera.ScreenToWorldPoint (Input.mousePosition);
 		mousePos.z = 0;
 
-		tank.cannon.AimToward ((mousePos - transform.position).normalized);
+		tank.cannon.AimTowardsDirection ((mousePos - transform.position).normalized);
 
 		if (Input.GetMouseButtonDown (0)) {
 			tank.cannon.Fire ();

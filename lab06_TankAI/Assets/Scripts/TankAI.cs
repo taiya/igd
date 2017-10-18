@@ -3,126 +3,96 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class TankAI : MonoBehaviour {
-
-	public const int Patrolling = 0;
-	public const int Attacking = 1;
-	public const int Fleeing = 2;
+	private Tank tank;
+	private Player player;
 
 	public float detectionDistance = 5;
-	public float fleeThreshold = 40;
-	public float patrolPeriod = 2.5f;
-	public float cannonReloadTime = 2;
-	public float followDistance = 3;
+	public float fleeHealthThreshold = 40;
 
-	public int state = Patrolling;
+	public enum State {Patrolling, Attacking, Fleeing};  
+	public State state = State.Patrolling;
 
-	Tank tank;
+	/// The directions that, over time, the tanks will target
+	Vector2 patrolDirection;
+	Vector2 attackDirection;
+	Vector2 fleeDirection;
 
-	Player player;
-
-	Vector3 patrolDirection;
-	float patrolTimer = 0;
-
-	float cannonCooldown = 0;
 
 	void Start () {
-
 		tank = GetComponent<Tank> ();
 		player = GameObject.FindObjectOfType<Player> ();
 
+		// Setup timers
+		InvokeRepeating("EventSwitchDirection", 0.0f, 2.5f);
+		InvokeRepeating("EventFireCannon", 0.0f, 2.0f);
+	}
+
+	Vector2 RandomDirectionTowards(Vector2 target){
+		// TODO: generate a random direction towards the target direction (+/- 90 degrees)
+		return Vector2.zero;
+	}
+
+	void EventSwitchDirection() {
+        // This method is called periodically. See Start().
+
+        // TODO: use RandomDirectionTowards() to set patrolDirection
+        // TODO: use RandomDirectionTowards() to set attackDirection
+        // TODO: use RandomDirectionTowards() to set fleeDirection
+    }
+
+    void EventFireCannon() {
+        // This method is called periodically. See Start().
+
+        switch (state) {
+		case State.Attacking:
+			// TODO: shoot towards the player
+            // TODO(optional): make the aim of the tank a bit worse
+            break;
+		}
+	}
+
+	public void EventAttackDetected() {
+        // TODO: when attacked a tank executes this function.. react!
 	}
 
 	void Update () {
-
-		var playerDirection = (player.transform.position - transform.position).normalized;
-
 		switch (state) {
 
-		case Patrolling:
+		case State.Patrolling:
+			{
+				// TODO: move the tank forward
 
-			// TODO: -------------------------
-			// Add patrol behaviour
+				// TODO: logic for Patrol->Attach state change
 
-			if (patrolTimer <= 0) {
-				patrolTimer = patrolPeriod;
+                // let the tanks heal when not in battle
+				tank.heal ();
 
-				// Change patrolDirection
+				break;
+			}
+				
+		case State.Attacking:
+			{
+				// TODO: move the tank and aim towards the player
 
+				// TODO: logic for Attack->{Patrol,Flee} state change
 
-
+				break;
 			}
 
-			patrolTimer -= Time.deltaTime;
+		case State.Fleeing:
+			{
+				// TODO: move the tank away from player
 
-			// Move tank
+				// TODO: logic for Flee->{Patrol} state change
 
-
-
-			// -------------------------------
-
-			// TODO: -------------------------
-			// Under what circumstances should state transitions occur?
-			// Add logic to leave patrol state (Check for player within detection distance)
-
-
-
-			// -------------------------------
-
-			break;
-
-		case Attacking:
-
-			// TODO: -------------------------
-			// Add attack behaviour
-
-			if (cannonCooldown <= 0) {
-				cannonCooldown = cannonReloadTime;
-
-				// Fire cannon at player
-
-
-
+				break;
 			}
-
-			cannonCooldown -= Time.deltaTime;
-
-			// Move tank
-
-
-
-			// -------------------------------
-
-			// TODO: -------------------------
-			// Add logic to leave attack state (Check for tank health below flee threshold)
-
-
-
-			// -------------------------------
-			
-			break;
-
-		case Fleeing:
-
-			// TODO: -------------------------
-			// Add flee behaviour
-
-
-
-			// -------------------------------
-
-			// TODO: -------------------------
-			// Add logic to leave flee state (Check for minimum distance reached)
-
-
-
-			// -------------------------------
-
-			break;
-
 		}
 	}
 
 	void OnDestroy() {
 		player.IncrementScore ();
 	}
+
+
 }

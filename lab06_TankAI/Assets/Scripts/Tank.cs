@@ -8,6 +8,7 @@ public class Tank : MonoBehaviour {
 	public float turnSpeed = 200;
 
 	public float health = 100;
+	public float healing_rate = .25f;
 
 	public Cannon cannon;
 	public HealthBar healthBar;
@@ -33,22 +34,20 @@ public class Tank : MonoBehaviour {
 
 	}
 
+	public void heal(){
+		health += healing_rate;
+		health = Mathf.Min (health, 100);
+		healthBar.SetHealth (health);
+	}
+
 	public void ApplyDamage(float damage) {
 		
 		health -= damage;
-
 		healthBar.SetHealth (health);
 
 		var ai = GetComponent<TankAI> ();
 		if (ai != null) {
-
-			// TODO: -------------------------
-			// Make AI respond to attack
-
-
-
-			// -------------------------------
-
+			ai.EventAttackDetected ();
 		}
 
 		if (health <= 0) {
