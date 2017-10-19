@@ -42,7 +42,7 @@
 				for (int i = 0;i < 5;i++) {
 					for (int j = 0;j < 5;j++) {
 
-						float2 samplePos = input.uv + pixelSize * float2(i-2,j-2);
+						float2 samplePos = input.uv; // <--- Change this
 						int kernelIndex = i + 5 * j;
 
 						convolution += 0; // <--- Change this

@@ -22,21 +22,20 @@
 
 				float kernel[9] = {
 					1, 	0, 	-1,
-					2, 	0, 	-2,
+					2,	0, 	-2,
 					1, 	0, 	-1
 				};
 
 				// Dimensions of a pixel in screen space
 				float2 pixelSize = 1 / screenSize;
 
-				float blendFactor = brushSampleAA(input.uv) * 0.01;
+				float blendFactor = brushSampleAA(input.uv) * 0.1;
 
 
 				// TODO: -------------------------
 				// Calculate the convolution of the kernel with the input image.
 
 				float4 convolution = float4(0,0,0,1);
-
 
 
 				// -------------------------------
@@ -75,9 +74,7 @@
 				// TODO: -------------------------
 				// Calculate the convolution of the kernel with the input image.
 
-				float4 convolution = float4(0,0,0,1);
-
-
+				float4 convolution = float4(0, 0, 0, 1);
 
 				// -------------------------------
 
