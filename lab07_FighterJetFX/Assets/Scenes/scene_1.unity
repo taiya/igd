@@ -37,7 +37,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44917023, g: 0.4959072, b: 0.5577821, a: 1}
+  m_IndirectSpecularColor: {r: 0.44916975, g: 0.49590677, b: 0.55778074, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -801,7 +801,7 @@ ParticleSystem:
   moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -1342186090
+  randomSeed: 430411341
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -3968,7 +3968,7 @@ ParticleSystem:
   moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 215590054
+  randomSeed: -106449357
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -7596,7 +7596,6 @@ GameObject:
   - component: {fileID: 1063488123}
   - component: {fileID: 1063488122}
   - component: {fileID: 1063488121}
-  - component: {fileID: 1063488120}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -7604,13 +7603,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &1063488120
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1063488119}
-  m_Enabled: 1
 --- !u!124 &1063488121
 Behaviour:
   m_ObjectHideFlags: 0
@@ -9010,7 +9002,7 @@ ParticleSystem:
   moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 1327298276
+  randomSeed: -1995471538
   InitialModule:
     serializedVersion: 3
     enabled: 1

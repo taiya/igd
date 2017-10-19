@@ -40,23 +40,16 @@ public class Fireworks : MonoBehaviour {
 		}
 
 		StartCoroutine (PlaySecondaryExplosionSound (primaryExplosionParticles.main.startLifetime.Evaluate (0)));
-
 	}
 
 	void Update () {
 
 		if (Input.GetKeyDown (KeyCode.Space) && particles.isStopped) {
 
-			// TODO: -------------------------
-			// Play the fireworks launch sound
-
-
-
-			// -------------------------------
+			// TODO: Play the fireworks launch sound
 
 			particles.Play ();
 			StartCoroutine (PlayPrimaryExplosionSound (particles.main.startLifetime.Evaluate (0)));
-
 		}
 		
 	}
