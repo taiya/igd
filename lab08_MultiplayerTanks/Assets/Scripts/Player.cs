@@ -81,8 +81,6 @@ public class Player : MonoBehaviour {
 
 		tank.cannon.AimToward ((mousePos - transform.position).normalized);
 
-		updateMsg.cannonDirection = tank.cannon.transform.up;
-
 		if (Input.GetMouseButtonDown (0)) {
 			
 			tank.cannon.Fire ();

@@ -15,10 +15,8 @@ public class PositionInterpolater : MonoBehaviour {
 	}
 
 	void Update () {
-
-		var stepDelta = remainingDelta / 10;
-		remainingDelta -= stepDelta;
-
-		transform.position += stepDelta;
-	}
+        // TODO: use interpolation to smoothly update the local position ( transform.position )
+        // to the position given by the server ( the position SetTargetPosition() was called with )
+        // transform.position = ?
+    }
 }
