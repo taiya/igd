@@ -1,4 +1,4 @@
-# Introduction to Game Development - CSC205 - Fall'17
+# Intro. to Game Engines - CSC205 - Fall'17
 
 ## Course Objectives And Learning Outcomes
 
