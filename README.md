@@ -7,7 +7,7 @@ The course introduces the development fundamentals of Video Games, and other int
 ## Textbooks
 
 | *Recommended:* | Mathematics for 3D Game Programming and Computer Graphics (Third Edition) |
-| :--- | :--- | :--- |
+| :--- | :--- |
 |             | Eric Lengyel -- Cengage Learning |
 |             | ISBN-10 1435458869 |
 | *Optional:* | Game Engine Architecture (Second Edition) |
